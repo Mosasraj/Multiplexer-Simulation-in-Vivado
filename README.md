@@ -293,16 +293,32 @@ Time=300 | S[1]=1 S[0]=1 | Inputs: I[0]=1 I[1]=0 I[2]=1 I[3]=0
 
 **Output waveform** <br>
 **Gate-Level:**
-<img width="1915" height="1078" alt="image" src="https://github.com/user-attachments/assets/b6a41490-782e-45ec-aa9d-162c42b09944" /><br>
+
+
+<img width="1915" height="1078" alt="image" src="https://github.com/user-attachments/assets/b6a41490-782e-45ec-aa9d-162c42b09944" />
+
+
 
 **Data Flow:**
+
+
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/93b69de1-df86-4d71-9ddc-b5976a0a2ba9" />
 
+
+
 **Behavioral:**
+
+
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/cfd328ba-a242-4053-ac8c-66f50134af51" />
 
+
+
 **Structural:**
+
+
 <img width="1906" height="1079" alt="image" src="https://github.com/user-attachments/assets/b48e6337-db4c-4a43-a49b-b7f46dc8d03a" />
+
+
 
 **Conclusion:** <br>
 <br>
