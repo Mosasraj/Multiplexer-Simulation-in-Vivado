@@ -1,15 +1,12 @@
 # Exp-No: 01 - 4:1 Multiplexer using Verilog HDL (Gate-Level, Dataflow, Behavioural, and Structural Modelling)
 
-# Aim: <br>
+# Aim: 
+&emsp;&emsp;To design and simulate a 4:1 Multiplexer (MUX) using Verilog HDL in four different modeling styles—Gate-Level, Data Flow, Behavioral, and Structural and to verify its functionality through a testbench using the Vivado 2023.1 simulation environment. The experiment aims to understand how different abstraction levels in Verilog can be used to describe the same digital logic circuit and analyze their performance.
 <br>
-&emsp;&emsp;To design and simulate a 4:1 Multiplexer (MUX) using Verilog HDL in four different modeling styles—Gate-Level, Data Flow, Behavioral, and Structural and to verify its functionality through a testbench using the Vivado 2023.1 simulation environment. The experiment aims to understand how different abstraction levels in Verilog can be used to describe the same digital logic circuit and analyze their performance.<br>
-<br>
-# Apparatus Required: <br>
-<br>
-&emsp;&emsp;Vivado 2023.1<br>
-<br>
-# Procedure: <br>
-<br>
+# Apparatus Required: 
+&emsp;&emsp;Vivado 2023.1
+# Procedure: 
+
 1. Launch Vivado Open Vivado 2023.1 by double-clicking the Vivado icon or searching for it in the Start menu.<br>
 2. Create a New Project Click on "Create Project" from the Vivado Quick Start window. In the New Project Wizard: Project Name: Enter a name for the project (e.g., Mux4_to_1). Project Location: Select the folder where the project will be saved. Click Next. Project Type: Select RTL Project, then click Next. Add Sources: Click on "Add Files" to add the Verilog files (e.g., mux4_to_1_gate.v, mux4_to_1_dataflow.v, etc.). Make sure to check the box "Copy sources into project" to avoid any external file dependencies. Click Next. Add Constraints: Skip this step by clicking Next (since no constraints are needed for simulation).
 Default Part Selection: You can choose a part based on the FPGA board you are using (if any). If no board is used, you can choose any part, for example, xc7a35ticsg324-1L (Artix-7). Click Next, then Finish.<br>
@@ -24,21 +21,18 @@ Under "Simulation", modify the Run Time (e.g., set to 1000ns).<br>
 10. Close the Simulation Once done, by going to Simulation → "Close Simulation<br>
 <br>
 
-# Logic Diagram: <br>
-<br>
+# Logic Diagram: 
 
 ![368836171-d4ab4bc3-12b0-44dc-8edb-9d586d8ba856](https://github.com/user-attachments/assets/335554b2-6dde-4d52-b34d-d1c711e330ad)
 
-<br>
 
-# Truth Table: <br>
-<br>
+# Truth Table: 
 
 ![368836230-c850506c-3f6e-4d6b-8574-939a914b2a5f](https://github.com/user-attachments/assets/ef7b428a-a74c-4ee4-9681-d89e5ad2ec35)
 
-<br>
 
-**Verilog Code:** <br>
+
+# Verilog Code:
 # 4:1 MUX Gate-Level Implementation:
 ```verilog
 module mux4to1(I0,I1,I2,I3,S1,S2,Y);
