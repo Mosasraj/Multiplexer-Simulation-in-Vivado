@@ -1,14 +1,14 @@
 # Exp-No: 01 - 4:1 Multiplexer using Verilog HDL (Gate-Level, Dataflow, Behavioural, and Structural Modelling)
 
-**Aim:** <br>
+# Aim: <br>
 <br>
 &emsp;&emsp;To design and simulate a 4:1 Multiplexer (MUX) using Verilog HDL in four different modeling styles—Gate-Level, Data Flow, Behavioral, and Structural and to verify its functionality through a testbench using the Vivado 2023.1 simulation environment. The experiment aims to understand how different abstraction levels in Verilog can be used to describe the same digital logic circuit and analyze their performance.<br>
 <br>
-**Apparatus Required:** <br>
+# Apparatus Required: <br>
 <br>
 &emsp;&emsp;Vivado 2023.1<br>
 <br>
-**Procedure:** <br>
+# Procedure: <br>
 <br>
 1. Launch Vivado Open Vivado 2023.1 by double-clicking the Vivado icon or searching for it in the Start menu.<br>
 2. Create a New Project Click on "Create Project" from the Vivado Quick Start window. In the New Project Wizard: Project Name: Enter a name for the project (e.g., Mux4_to_1). Project Location: Select the folder where the project will be saved. Click Next. Project Type: Select RTL Project, then click Next. Add Sources: Click on "Add Files" to add the Verilog files (e.g., mux4_to_1_gate.v, mux4_to_1_dataflow.v, etc.). Make sure to check the box "Copy sources into project" to avoid any external file dependencies. Click Next. Add Constraints: Skip this step by clicking Next (since no constraints are needed for simulation).
@@ -24,14 +24,14 @@ Under "Simulation", modify the Run Time (e.g., set to 1000ns).<br>
 10. Close the Simulation Once done, by going to Simulation → "Close Simulation<br>
 <br>
 
-**Logic Diagram:** <br>
+# Logic Diagram: <br>
 <br>
 
 ![368836171-d4ab4bc3-12b0-44dc-8edb-9d586d8ba856](https://github.com/user-attachments/assets/335554b2-6dde-4d52-b34d-d1c711e330ad)
 
 <br>
 
-**Truth Table:** <br>
+# Truth Table: <br>
 <br>
 
 ![368836230-c850506c-3f6e-4d6b-8574-939a914b2a5f](https://github.com/user-attachments/assets/ef7b428a-a74c-4ee4-9681-d89e5ad2ec35)
@@ -39,8 +39,8 @@ Under "Simulation", modify the Run Time (e.g., set to 1000ns).<br>
 <br>
 
 **Verilog Code:** <br>
-**4:1 MUX Gate-Level Implementation:**
-```
+# 4:1 MUX Gate-Level Implementation:
+```verilog
 module mux4to1(I0,I1,I2,I3,S1,S2,Y);
     input I0,I1,I2,I3,S1,S2;
     output Y;
@@ -54,8 +54,8 @@ module mux4to1(I0,I1,I2,I3,S1,S2,Y);
     or (Y,a,b,c,d);    
 endmodule
 ```
-**4:1 MUX Data Flow Implementation:**
-```
+# 4:1 MUX Data Flow Implementation:
+```verilog
 
 
 module mux4to1_df(A,B,C,D,S1,S0,Y);
@@ -72,8 +72,8 @@ endmodule
 
 ```
 
-**4:1 MUX Behavioral Implementation:**
-```
+# 4:1 MUX Behavioral Implementation:
+```verilog
 module mux4to1_bhv(I,S,Y);
     input wire [0:3] I;
     input wire [1:0] S;
@@ -92,8 +92,8 @@ endmodule
 
 ```
 
-**4:1 MUX Structural Implementation:** <br>
-```
+# 4:1 MUX Structural Implementation: <br>
+```verilog
 
 
 module mux2to1(A,B,S,Y);
@@ -118,8 +118,8 @@ endmodule
 ```
 
 ##**Testbench Implementation:**
-**4:1 MUX Gate-Level Test bench Implementation**
-```
+# 4:1 MUX Gate-Level Test bench Implementation
+```verilog
 
 module mux4to1_tb;
     reg I0_t,I1_t,I2_t,I3_t,S1_t,S2_t;
@@ -159,8 +159,8 @@ endmodule
 
 
 ```
-**4:1 MUX Data Flow Test bench Implementation**
-```
+# 4:1 MUX Data Flow Test bench Implementation
+```verilog
 module mux4to1_df_tb;
     reg a,b,c,d,s1,s0;
     wire y;
@@ -197,8 +197,8 @@ module mux4to1_df_tb;
     end
 endmodule
 ```
-**4:1 MUX Behavioral Test bench Implementation**
-```
+# 4:1 MUX Behavioral Test bench Implementation
+```verilog
 module mux4to1_bhv_tb;
     reg [0:3]I;
     reg [1:0]S;
@@ -220,8 +220,8 @@ module mux4to1_bhv_tb;
     end
 endmodule
 ```
-**4:1 MUX Structural Test bench Implementation**
-```
+# 4:1 MUX Structural Test bench Implementation
+```verilog
 module mux4to1_str_tb;
     reg [0:3]I;
     reg [1:0]S;
@@ -245,9 +245,9 @@ module mux4to1_str_tb;
      end
 endmodule
 ```
-##**Sample Output:**
+# Sample Output:
 **4:1 MUX Gate-Level Implementation**
-```
+```verilog
 Time=00 | S1=0 S2=0 | Inputs: I0=1 I1=0 I2=1 I3=0
         | out_gate=1
 Time=100 | S1=0 S2=1 | Inputs: I0=1 I1=0 I2=1 I3=0
@@ -257,8 +257,8 @@ Time=200 | S1=1 S2=0 | Inputs: I0=1 I1=0 I2=1 I3=0
 Time=300 | S1=1 S2=1 | Inputs: I0=1 I1=0 I2=1 I3=0
         | out_gate=0
 ```
-**4:1 MUX Data Flow Implementation**
-```
+# 4:1 MUX Data Flow Implementation
+```verilog
 Time=00 | s[1]=0 s[0]=0 | Inputs: a=1 b=0 c=1 d=0
         | out_dataflow=1
 Time=100 | s[1]=0 s[0]=1 | Inputs: a=1 b=0 c=1 d=0
@@ -268,8 +268,8 @@ Time=200 | s[1]=1 s[0]=0 | Inputs: a=1 b=0 c=1 d=0
 Time=300 | s[1]=1 s[0]=1 | Inputs: a=1 b=0 c=1 d=0
         | out_dataflow=0
 ```
-**4:1 MUX Behavioral Implementation**
-```
+# 4:1 MUX Behavioral Implementation
+```verilog
 Time=00 | S[1]=0 S[0]=0 | Inputs: I[0]=1 I[1]=0 I[2]=1 I[3]=0
         | out_behavioral=1
 Time=100 | S[1]=0 S[0]=1 | Inputs: I[0]=1 I[1]=0 I[2]=1 I[3]=0
@@ -279,8 +279,8 @@ Time=200 | S[1]=1 S[0]=0 | Inputs: I[0]=1 I[1]=0 I[2]=1 I[3]=0
 Time=300 | S[1]=1 S[0]=1 | Inputs: I[0]=1 I[1]=0 I[2]=1 I[3]=0
         | out_behavioral=0
 ```
-**4:1 MUX Structural Implementation**
-```
+ # 4:1 MUX Structural Implementation**
+```verilog
 Time=00 | S[1]=0 S[0]=0 | Inputs: I[0]=1 I[1]=0 I[2]=1 I[3]=0
         | out_structural=1
 Time=100 | S[1]=0 S[0]=1 | Inputs: I[0]=1 I[1]=0 I[2]=1 I[3]=0
@@ -292,35 +292,35 @@ Time=300 | S[1]=1 S[0]=1 | Inputs: I[0]=1 I[1]=0 I[2]=1 I[3]=0
 ```
 
 **Output waveform** <br>
-**Gate-Level:**
+# Gate-Level:
 
 
 <img width="1915" height="1078" alt="image" src="https://github.com/user-attachments/assets/b6a41490-782e-45ec-aa9d-162c42b09944" />
 
 
 
-**Data Flow:**
+# Data Flow:
 
 
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/93b69de1-df86-4d71-9ddc-b5976a0a2ba9" />
 
 
 
-**Behavioral:**
+# Behavioral:
 
 
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/cfd328ba-a242-4053-ac8c-66f50134af51" />
 
 
 
-**Structural:**
+# Structural:
 
 
 <img width="1906" height="1079" alt="image" src="https://github.com/user-attachments/assets/b48e6337-db4c-4a43-a49b-b7f46dc8d03a" />
 
 
 
-**Conclusion:** <br>
+# Conclusion: <br>
 <br>
 &emsp;&emsp;In this experiment, a 4:1 Multiplexer was successfully designed and simulated using Verilog HDL across four different modeling styles: Gate-Level, Data Flow, Behavioral, and Structural. The simulation results verified the correct functionality of the MUX, with all implementations producing identical outputs for the given input conditions.
 
